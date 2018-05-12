@@ -1,0 +1,84 @@
+Introduction to Python
+
+Slide 2
+{
+	intro to python...	
+}
+
+Silde 3
+{
+	...
+}
+
+Slide 4
+{
+	--Python compiler
+	--oop,functional,
+	--glue
+}
+
+Slide 5
+{
+	compiler & interpreting
+}
+
+Slide 6,7
+{
+	install python
+	pip
+}
+
+Slide 8
+{
+	Jupyter
+	Jupyter Notebook
+}
+
+Silde ?
+{
+	www.python.org/doc
+	www.pythontutor.com			/* online python debugger */
+	www.cs.cmu.edu/~112/		/* CMU lecture homepage */
+}
+
+Slide ?
+{
+	python project structure
+	{
+		pythonproj			/* HOME DIR */
+		-- __init__.py
+		-- Modele0.py
+		-- Package1
+			-- __init__.py
+			-- Module1.py
+		-- Package2
+			-- __init__.py
+			__ MathFunctionModule.py
+		-- ...
+	}
+}
+
+Slide ? Game...
+{
+	PyGame -- 2D game dev
+	Scikit-learn
+	OpenAI
+	DeepMind Control Suite
+	TensorFlow
+	Keras-rl
+}
+
+Slide ? Deep learning Frame
+{
+	Torch
+	Caffe
+	Theano
+	CuDNN
+	TensorFlow
+	Mxnet
+}
+
+Slide ? 
+{
+
+}
