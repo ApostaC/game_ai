@@ -1,7 +1,6 @@
 import numpy as np 
 import tensorflow as tf 
-import argparse
-import pickle
+import os.path
 import gym
 
 #arg parse and some const definitions
@@ -11,13 +10,13 @@ ACTION_DOWN = 3
 action_dict = {ACTION_DOWN:0, ACTION_UP:1}
 
 HIDDEN_LAYER_SIZE = 200
-LEARNING_RATE = 0.0010
+LEARNING_RATE = 0.0005
 EPS_PER_BATCH = 1
 DISCOUNT_FACTOR = 0.99
 EPS_PER_CHECKPOINT = 10
 CKPT_DIR = 'checkpoints'
 LOAD = True
-RENDER = False
+RENDER = True 
 PRINT_ROUND_INFORMATION = False
 
 OBSER_SIZE = 6400
@@ -30,21 +29,21 @@ class Network:
         self.advantage = tf.placeholder(tf.float32,[None,1],name='advantage')
 
         #caculatation graph definition
-        hidden = tf.layer.dense(
+        hidden = tf.layers.dense(
             self.observations,
             units=hidden_layer_size,
             activation=tf.nn.relu,
             kernel_initializer=tf.contrib.layers.xavier_initializer())
         
-        self.up_prob = tf.layers.dese(
+        self.up_prob = tf.layers.dense(
             hidden,
             units = 1,
-            activation = tf.sigmod,
+            activation = tf.sigmoid,
             kernel_initializer=tf.contrib.layers.xavier_initializer()
         )
 
         self.loss = tf.losses.log_loss(
-            labels = self.sampled_actions,
+            labels = self.actions,
             predictions=self.up_prob,
             weights=self.advantage
         )
@@ -56,7 +55,7 @@ class Network:
         self.saver = tf.train.Saver()
         self.checkpointFile = os.path.join(checkpoints_dir,'pgn.ckpt')
 
-    def read_ckpt(sef):
+    def read_ckpt(self):
         print("Loading checkpoint from file...")
         self.saver.restore(self.sess,self.checkpointFile)
 
@@ -72,15 +71,15 @@ class Network:
         return up_P
 
     def train(self,sar_tuple):
-        print("Training with %d (state, action, reward) tuples" %
-              len(state_action_reward_tuples))
+        print('Training with %d (state, action, reward) tuples' %
+              len(sar_tuple))
         states, actions, rewards = zip(*sar_tuple)
         states = np.vstack(states)
         actions = np.vstack(actions)
         rewards = np.vstack(rewards)
         feed_dict = {
             self.observations: states,
-            self.sampled_actions: actions,
+            self.actions: actions,
             self.advantage: rewards 
         }
         self.sess.run(self.training, feed_dict)
@@ -116,16 +115,16 @@ if __name__ == "__main__":
     env = gym.make('Pong-v0')
     network = Network(HIDDEN_LAYER_SIZE,LEARNING_RATE,)
     if LOAD == True:
-        network.load_checkpoint()
+        network.read_ckpt()
     
     batch_sar_tuples = []
     smoothed_reward = None
     eps_cnt = 1
     while True:
-        print("Staring eps %d".format(eps_cnt))
+        print('Staring eps {}'.format(eps_cnt))
 
         eps_done = False
-        esp_reward_sum = 0
+        eps_reward_sum = 0
         round_cnt = 1
 
         last_obs = env.reset()
@@ -147,7 +146,7 @@ if __name__ == "__main__":
             else:
                 action = ACTION_DOWN
 
-            obs, reward, eps_done, info = env.step()
+            obs, reward, eps_done, info = env.step(action)
             obs = preprocessing(obs)
             eps_reward_sum += reward
             step_cnt += 1
@@ -156,15 +155,22 @@ if __name__ == "__main__":
 
             if PRINT_ROUND_INFORMATION:
                 if reward == -1:
-                    print("round %d lost...".format(round_cnt))
+                    print('round {} lost...'.format(round_cnt))
                 elif reward == +1:
-                    print("round %d win!".format(round_cnt))
+                    print('round {} win!'.format(round_cnt))
             
             if reward!=-1:
                 round_cnt += 1
                 step_cnt = 0
             
-        print("Eps %d finished! Total %d rounds, rewards:%.3f".format(eps_cnt,round_cnt,eps_reward_sum))
+        print('Eps {} finished! Total {} rounds, rewards:{} discounted rewards:{}'.format(eps_cnt,round_cnt,eps_reward_sum,smoothed_reward))
+        computer = 21
+        myS = 21
+        if  eps_reward_sum < 0:
+            myS += eps_reward_sum
+        else:
+            computer -= eps_reward_sum
+        print('Score is {}:{} (computer : my BOT)'.format(computer,myS))
 
         if smoothed_reward is None:
             smoothed_reward = eps_reward_sum
@@ -184,6 +190,7 @@ if __name__ == "__main__":
             network.save_ckpt()
 
         eps_cnt += 1
+        round_cnt = 0
             
 
 
