@@ -1,0 +1,1 @@
+/usr/bin/g++  -g -g -Wall -Wextra  -rdynamic CMakeFiles/test.dir/test.cpp.o  -o test envs/libLIBENVS.a utils/libLIBUTILS.a factories/libLIBFACTORIES.a 

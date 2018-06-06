@@ -1,0 +1,7 @@
+SET(HEADERS AgentFactory.hpp
+    )
+
+SET(SOURCES AgentFactory.cpp
+    )
+
+ADD_LIBRARY(LIBFACTORIES STATIC ${HEADERS} ${SOURCES})

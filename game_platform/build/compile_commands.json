@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/aposta/projects/ai/game_platform/build",
+  "command": "/usr/bin/g++   -I/home/aposta/projects/ai/game_platform/src/utils -I/home/aposta/projects/ai/game_platform/src/factories -I/home/aposta/projects/ai/game_platform/src/envs  -g -g -Wall -Wextra   -DOUTPUT -std=c++14 -o CMakeFiles/test2.dir/test2.cpp.o -c /home/aposta/projects/ai/game_platform/src/test2.cpp",
+  "file": "/home/aposta/projects/ai/game_platform/src/test2.cpp"
+},
+{
+  "directory": "/home/aposta/projects/ai/game_platform/build",
+  "command": "/usr/bin/g++   -I/home/aposta/projects/ai/game_platform/src/utils -I/home/aposta/projects/ai/game_platform/src/factories -I/home/aposta/projects/ai/game_platform/src/envs  -g -g -Wall -Wextra   -DOUTPUT -std=c++14 -o CMakeFiles/test.dir/test.cpp.o -c /home/aposta/projects/ai/game_platform/src/test.cpp",
+  "file": "/home/aposta/projects/ai/game_platform/src/test.cpp"
+},
+{
+  "directory": "/home/aposta/projects/ai/game_platform/build/utils",
+  "command": "/usr/bin/g++   -I/home/aposta/projects/ai/game_platform/src/utils -I/home/aposta/projects/ai/game_platform/src/factories -I/home/aposta/projects/ai/game_platform/src/envs  -g -g -Wall -Wextra   -DOUTPUT -std=c++14 -o CMakeFiles/LIBUTILS.dir/FTLCards.cpp.o -c /home/aposta/projects/ai/game_platform/src/utils/FTLCards.cpp",
+  "file": "/home/aposta/projects/ai/game_platform/src/utils/FTLCards.cpp"
+},
+{
+  "directory": "/home/aposta/projects/ai/game_platform/build/factories",
+  "command": "/usr/bin/g++   -I/home/aposta/projects/ai/game_platform/src/utils -I/home/aposta/projects/ai/game_platform/src/factories -I/home/aposta/projects/ai/game_platform/src/envs  -g -g -Wall -Wextra   -DOUTPUT -std=c++14 -o CMakeFiles/LIBFACTORIES.dir/AgentFactory.cpp.o -c /home/aposta/projects/ai/game_platform/src/factories/AgentFactory.cpp",
+  "file": "/home/aposta/projects/ai/game_platform/src/factories/AgentFactory.cpp"
+},
+{
+  "directory": "/home/aposta/projects/ai/game_platform/build/envs",
+  "command": "/usr/bin/g++   -I/home/aposta/projects/ai/game_platform/src/utils -I/home/aposta/projects/ai/game_platform/src/factories -I/home/aposta/projects/ai/game_platform/src/envs  -g -g -Wall -Wextra   -DOUTPUT -std=c++14 -o CMakeFiles/LIBENVS.dir/elements.cpp.o -c /home/aposta/projects/ai/game_platform/src/envs/elements.cpp",
+  "file": "/home/aposta/projects/ai/game_platform/src/envs/elements.cpp"
+},
+{
+  "directory": "/home/aposta/projects/ai/game_platform/build/envs",
+  "command": "/usr/bin/g++   -I/home/aposta/projects/ai/game_platform/src/utils -I/home/aposta/projects/ai/game_platform/src/factories -I/home/aposta/projects/ai/game_platform/src/envs  -g -g -Wall -Wextra   -DOUTPUT -std=c++14 -o CMakeFiles/LIBENVS.dir/Agents.cpp.o -c /home/aposta/projects/ai/game_platform/src/envs/Agents.cpp",
+  "file": "/home/aposta/projects/ai/game_platform/src/envs/Agents.cpp"
+},
+{
+  "directory": "/home/aposta/projects/ai/game_platform/build/envs",
+  "command": "/usr/bin/g++   -I/home/aposta/projects/ai/game_platform/src/utils -I/home/aposta/projects/ai/game_platform/src/factories -I/home/aposta/projects/ai/game_platform/src/envs  -g -g -Wall -Wextra   -DOUTPUT -std=c++14 -o CMakeFiles/LIBENVS.dir/FightTheLandlord.cpp.o -c /home/aposta/projects/ai/game_platform/src/envs/FightTheLandlord.cpp",
+  "file": "/home/aposta/projects/ai/game_platform/src/envs/FightTheLandlord.cpp"
+}
+]

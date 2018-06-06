@@ -1,0 +1,2 @@
+/usr/bin/ar qc libLIBUTILS.a  CMakeFiles/LIBUTILS.dir/FTLCards.cpp.o
+/usr/bin/ranlib libLIBUTILS.a

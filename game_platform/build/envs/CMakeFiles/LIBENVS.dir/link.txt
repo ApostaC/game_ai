@@ -1,0 +1,2 @@
+/usr/bin/ar qc libLIBENVS.a  CMakeFiles/LIBENVS.dir/elements.cpp.o CMakeFiles/LIBENVS.dir/Agents.cpp.o CMakeFiles/LIBENVS.dir/FightTheLandlord.cpp.o
+/usr/bin/ranlib libLIBENVS.a

@@ -1,0 +1,2 @@
+/home/aposta/projects/ai/game_platform/for_test/test
+/home/aposta/projects/ai/game_platform/for_test/test2

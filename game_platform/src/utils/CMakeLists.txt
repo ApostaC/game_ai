@@ -1,0 +1,7 @@
+SET(HEADERS FTLCards.hpp json.hpp
+    )
+
+SET(SOURCES FTLCards.cpp
+    )
+
+ADD_LIBRARY(LIBUTILS STATIC ${HEADERS} ${SOURCES})

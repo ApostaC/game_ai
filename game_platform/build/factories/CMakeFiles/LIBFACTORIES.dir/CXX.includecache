@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/aposta/projects/ai/game_platform/src/envs/Agents.h
+elements.h
+/home/aposta/projects/ai/game_platform/src/envs/elements.h
+signal.h
+-
+fcntl.h
+-
+unistd.h
+-
+
+/home/aposta/projects/ai/game_platform/src/envs/elements.h
+string
+-
+vector
+-
+map
+-
+memory
+-
+
+/home/aposta/projects/ai/game_platform/src/factories/AgentFactory.cpp
+AgentFactory.hpp
+/home/aposta/projects/ai/game_platform/src/factories/AgentFactory.hpp
+
+/home/aposta/projects/ai/game_platform/src/factories/AgentFactory.hpp
+stdexcept
+-
+../envs/elements.h
+/home/aposta/projects/ai/game_platform/src/envs/elements.h
+../envs/Agents.h
+/home/aposta/projects/ai/game_platform/src/envs/Agents.h
+elements.h
+/home/aposta/projects/ai/game_platform/src/factories/elements.h
+Agents.h
+/home/aposta/projects/ai/game_platform/src/factories/Agents.h
+
